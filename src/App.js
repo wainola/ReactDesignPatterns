@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Router from './Router'
 import Composition from './composition/Composition'
 import DependencyInjection from './dependencyInjection/DependencyInjection'
+import DataFlow from './dataFlow/DataFlow'
 
 export class App extends Component {
 	constructor(){
@@ -42,6 +43,14 @@ export class App extends Component {
 						{ url: this.state.routes[2].url, rendered: false }
 					]
 				})
+			case '/data-flow':
+				return this.setState({
+					routes: [
+						{ url: this.state.routes[0].url, rendered: false },
+						{ url: this.state.routes[1].url, rendered: false },
+						{ url: this.state.routes[2].url, rendered: true }
+					]
+				})
 			default:
 				return this.state
 		}
@@ -57,7 +66,7 @@ export class App extends Component {
 				<div>
 					<button onClick={this.route} location='/composition'>Composition</button>
 					<button onClick={this.route} location='/dependency-injection'>Dependency Injection</button>
-					<button onClick={this.route}>Data flow</button>
+					<button onClick={this.route} location='/data-flow'>Data flow</button>
 				</div>
 				<div>
 					{
@@ -65,6 +74,9 @@ export class App extends Component {
 					}
 					{
 						routes[1].rendered && <Router to='/dependency-injection' component={DependencyInjection} currentLocation={window.location.pathname} />
+					}
+					{
+						routes[2].rendered && <Router to='/data-flow' component={DataFlow} currentLocation={window.location.pathname} />
 					}
 				</div>
 			</div>

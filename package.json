@@ -1,0 +1,23 @@
+{
+  "name": "react_design_patterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wainola/ReactDesignPatterns.git"
+  },
+  "author": "Nicolás Riquelme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wainola/ReactDesignPatterns/issues"
+  },
+  "homepage": "https://github.com/wainola/ReactDesignPatterns#readme",
+  "devDependencies": {
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
